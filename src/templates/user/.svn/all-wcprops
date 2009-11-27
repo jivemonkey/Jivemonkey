@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/fnf_fnf/!svn/ver/6/trunk/FridayNightFu/src/templates/user
+END
+login.html
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/fnf_fnf/!svn/ver/6/trunk/FridayNightFu/src/templates/user/login.html
+END
+list.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/fnf_fnf/!svn/ver/6/trunk/FridayNightFu/src/templates/user/list.html
+END
+edit.html
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/fnf_fnf/!svn/ver/6/trunk/FridayNightFu/src/templates/user/edit.html
+END
+detail.html
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/fnf_fnf/!svn/ver/6/trunk/FridayNightFu/src/templates/user/detail.html
+END

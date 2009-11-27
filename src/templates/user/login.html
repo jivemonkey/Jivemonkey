@@ -1,0 +1,17 @@
+{% extends "common/main_base.html" %}
+
+{% block content %}
+{% if form.errors %}
+<h2>Errors</h2>
+{% endif %}
+
+<form id="loginForm" method="post" action="/user/login/">
+<table>
+<tr><td>{{ form.username.label_tag }}</td><td>{{ form.username }}</td></tr>
+<tr><td>{{ form.password.label_tag }}</td><td>{{ form.password }}</td></tr>
+</table>
+
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+{% endblock %}

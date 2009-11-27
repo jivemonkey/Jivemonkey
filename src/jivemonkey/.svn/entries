@@ -1,0 +1,67 @@
+8
+
+dir
+8
+http://fnf.unfuddle.com/svn/fnf_fnf/trunk/FridayNightFu/src/fridaynightfu
+http://fnf.unfuddle.com/svn/fnf_fnf
+
+
+
+2009-01-29T03:21:56.880831Z
+2
+fnf
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+91a26161-fb79-4cb7-9177-250d1d16007c
+
+AuthModule.py
+file
+
+
+
+
+2009-01-29T03:39:24.000000Z
+926ec9a9c94db038c285dadb3f31102c
+2009-01-29T03:21:56.880831Z
+2
+fnf
+
+__init__.py
+file
+
+
+
+
+2009-01-29T03:39:23.000000Z
+d41d8cd98f00b204e9800998ecf8427e
+2009-01-29T03:21:56.880831Z
+2
+fnf
+
+models.py
+file
+
+
+
+
+2009-01-29T03:39:23.000000Z
+1f3a870a2b0dd582ea18ad714fc909ee
+2009-01-29T03:21:56.880831Z
+2
+fnf
+
+views
+dir
+

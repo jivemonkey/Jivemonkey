@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>{% block title %}Jivemonkey{% endblock %}</title>
+	<style type="text/css">
+	body {
+		background-color: #fff;
+		color: #000;
+		
+	}
+	
+	table.list {
+		width: 600px;
+		margin-left: 10px;
+		margin-bottom: 20px;
+		border: medium solid #000000;
+	}
+	
+	table.list td {
+		padding: 10px;
+		text-align: center;
+		background: #eeeeee;
+	}
+	
+	table.list td.title {
+		width: 250px;
+		text-align:left;
+	}
+	
+	.toolbar li {
+		display:inline;
+		background-color:#eee;
+		border:1px solid;
+		border-color:#f3f3f3 #bbb #bbb #f3f3f3;
+		margin:0;
+		padding:.5em;
+		zoom: 1;
+	}
+
+	#popUpBackground {
+		display:none;
+		position:fixed;  
+		_position:absolute; /* hack for internet explorer 6*/  
+		height:100%;  
+		width:100%;  
+		top:0;  
+		left:0;  
+		background:#000000;  
+		border:1px solid #cecece;  
+		z-index:1;  
+	}
+
+	#popUpContainer{  
+		display:none;  
+		position:fixed;  
+		_position:absolute; /* hack for internet explorer 6*/  
+		height:384px;  
+		width:470px;  
+		background:#FFFFFF;  
+		border:2px solid #cecece;  
+		z-index:2;  
+		padding:12px;  
+		font-size:13px;  
+	}
+	#login {
+		margin-left: 50px;
+	}
+	</style>
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-1223637-2");
+		pageTracker._trackPageview();
+	} catch(err) {}
+	</script>
+	<script type="text/javascript" src="/static/js/jquery-1.2.6.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.form.js"></script>
+	<script type="text/javascript">
+
+	function changeContent(pageName) {
+		$("#content").load(pageName);
+		return false;
+	}
+	
+	function popUp(page)
+	{
+		$("#popUpContainer").load(page, displayPopup);
+	}
+	
+	//open and center popup  
+	function displayPopup(){  
+		//request data for centering  
+		var windowWidth = document.documentElement.clientWidth;  
+		var windowHeight = document.documentElement.clientHeight;
+		var popupHeight = $("#popUpContainer").height();  
+		var popupWidth = $("#popUpContainer").width();
+
+		$("#popUpBackground").css({"opacity": "0.7"});
+		$("#popUpBackground").fadeIn("slow");
+		$("#popUpContainer").fadeIn("slow");
+
+		//centering  
+		$("#popUpContainer").css({  
+					"position": "absolute",  
+					"top": windowHeight/2-popupHeight/2,  
+					"left": windowWidth/2-popupWidth/2  
+				});
+
+		//only need force for IE6  
+		$("#popUpBackground").css({  
+					"height": windowHeight  
+				});  
+	}
+
+	function closePopup()
+	{
+		$("#popUpBackground").fadeOut("fast");
+		$("#popUpContainer").fadeOut("fast");
+	}
+	</script>
+</head>
+
+<body>
+	<div id="popUpBackground" onclick="closePopup();"></div>
+	<div id="popUpContainer"></div>
+    <div id="login">
+     	{% if not user.is_anonymous and user.is_authenticated %}
+     	{{ user.username }} <a href="/user/logout/?next=/">Logout</a>
+     	{% else %}
+     	<a href="/user/login/?next=/">Login</a> | 
+     	<a href="/user/create/">create</a>
+     	{% endif %}
+	</div>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Our Company Wellness</title>
+<style type="text/css">
+table.list
+{
+	width: 200px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	border: medium solid #000000;
+}
+table.list td
+{
+	padding: 10px;
+	text-align: center;
+	background: #eeeeee;
+}
+</style>
+</head>
+<body>
+<table class="list">
+{% for user in users %}
+<tr><td>{{ user.username }} ({{ user.first_name }})</td><td><a href="company/delete/{{ user.key }}">Delete</a></td></tr>
+{% endfor %}
+</table>
+</body>
+</html>
