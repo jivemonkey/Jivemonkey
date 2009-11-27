@@ -94,7 +94,7 @@ ROOT_URLCONF = 'urls'
 
 ROOT_PATH = os.path.dirname(__file__)
 TEMPLATE_DIRS = (
-    os.path.join(ROOT_PATH, 'templates')
+    os.path.join(ROOT_PATH, 'views')
 )
 
 INSTALLED_APPS = (

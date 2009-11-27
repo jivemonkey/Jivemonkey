@@ -14,9 +14,9 @@
 
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('jivemonkey.views',
+urlpatterns = patterns('jivemonkey.controllers',
     # Main page
-    (r'^$','views.index'),
+    (r'^$','home.index'),
     # Movies Actions
     (r'^movie/list/$','movie.list'),
     (r'^movie/edit/(?P<movie_id>\w+)/$','movie.edit'),
