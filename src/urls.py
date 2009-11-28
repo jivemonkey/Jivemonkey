@@ -12,27 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from django.conf.urls.defaults import *
+from django.conf.urls.defaults import patterns
 
-urlpatterns = patterns('jivemonkey.controllers',
+urlpatterns = patterns('controllers',
     # Main page
     (r'^$','home.index'),
-    # Movies Actions
-    (r'^movie/list/$','movie.list'),
-    (r'^movie/edit/(?P<movie_id>\w+)/$','movie.edit'),
-    (r'^movie/add/$','movie.add'),
-    (r'^movie/update/(?P<movie_id>\w+)$','movie.update'),
-    (r'^movie/detail/(?P<movie_id>\w+)/$','movie.detail'),
-    (r'^movie/create/$','movie.create'),
-    (r'^movie/delete/(?P<movie_id>\w+)/$','movie.delete'),
-    # Review Actions
-    (r'^review/list/$','review.list'),
-    (r'^review/edit/(?P<review_id>\w+)/$','review.edit'),
-    (r'^review/add/$','review.add'),
-    (r'^review/update/(?P<review_id>\w+)$','review.update'),
-    (r'^review/detail/(?P<review_id>\w+)/$','review.detail'),
-    (r'^review/create/(?P<movie_id>\w+)/$','review.create'),
-    (r'^review/delete/(?P<review_id>\w+)/$','review.delete'),
     # News Actions
     (r'^news/list/$','news.list'),
     (r'^news/edit/(?P<news_id>\w+)/$','news.edit'),
@@ -48,6 +32,7 @@ urlpatterns = patterns('jivemonkey.controllers',
     (r'^user/create/$','user.create'),
     (r'^user/delete/(?P<user_id>\w+)/$','user.delete'),
 )
+
 urlpatterns += patterns('',
     # Django User Actions
     (r'^user/login/$', 'django.contrib.auth.views.login', {'template_name': 'user/login.html'}),

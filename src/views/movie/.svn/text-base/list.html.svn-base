@@ -1,8 +1,0 @@
-<table class="list">
-{% for movie in movies %}
-	<tr>
-		<td class="title"><a onclick="changeContent('/movie/detail/{{movie.id}}')" href="#">{{ movie.title }}</a></td>
-	</tr>
-{% endfor %}
-</table>
-<a onclick="changeContent('/movie/create')" href="#">Add Movie</a>
