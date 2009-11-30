@@ -21,9 +21,7 @@ directly -- everything else is controlled from there.
 """
 
 # Standard Python imports.
-import os
 import sys
-import logging
 
 from appengine_django import InstallAppengineHelperForDjango
 from appengine_django import have_django_zip
@@ -37,15 +35,15 @@ from google.appengine.ext.webapp import util
 import django.core.handlers.wsgi
 
 def main():
-  # Ensure the Django zipfile is in the path if required.
-  if have_django_zip and django_zip_path not in sys.path:
-    sys.path.insert(1, django_zip_path)
+    # Ensure the Django zipfile is in the path if required.
+    if have_django_zip and django_zip_path not in sys.path:
+        sys.path.insert(1, django_zip_path)
 
-  # Create a Django application for WSGI.
-  application = django.core.handlers.wsgi.WSGIHandler()
+    # Create a Django application for WSGI.
+    application = django.core.handlers.wsgi.WSGIHandler()
 
-  # Run the WSGI CGI handler with that application.
-  util.run_wsgi_app(application)
+    # Run the WSGI CGI handler with that application.
+    util.run_wsgi_app(application)
 
 if __name__ == '__main__':
-  main()
+    main()
